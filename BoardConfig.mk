@@ -170,6 +170,7 @@ endif
 
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
+BOARD_VENDOR := xiaomi
 
 # Recovery
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
