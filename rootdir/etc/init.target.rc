@@ -106,6 +106,10 @@ on boot
     write /proc/irq/7/smp_affinity_list 2
     # kgsl-3d0
     write /proc/irq/489/smp_affinity_list 1
+# GPU Tuning
+    # GPU boost
+    chown system system /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 # wuzhisen change Define cpu set for audio app. This is to optimize
 # audio scheduling against lpm exit latencies
     write /dev/cpuset/audio-app/cpus 1-2
