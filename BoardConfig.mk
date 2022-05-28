@@ -114,7 +114,6 @@ ODM_MANIFEST_SKUS += lemon
 ODM_MANIFEST_LEMON_FILES := $(DEVICE_PATH)/manifest_lemon.xml
 
 # Power
-TARGET_USES_INTERACTION_BOOST := true
 TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Partitions
