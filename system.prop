@@ -89,6 +89,7 @@ ro.surface_flinger.set_idle_timer_ms=80
 ro.surface_flinger.set_touch_timer_ms=200
 ro.surface_flinger.set_display_power_timer_ms=1000
 ro.surface_flinger.wcg_composition_dataspace=143261696
+ro.sf.force_hwc_brightness=1
 
 # Time-services
 persist.timed.enable=true
