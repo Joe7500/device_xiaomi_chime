@@ -27,6 +27,10 @@ PRODUCT_SOONG_NAMESPACES += \
 # Product Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
 
+# AAPT
+PRODUCT_AAPT_CONFIG := normal
+PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
