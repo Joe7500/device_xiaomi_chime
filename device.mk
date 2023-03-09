@@ -311,6 +311,10 @@ PRODUCT_PACKAGES += \
     TelephonyResChime \
     WifiResCommon
 
+# Package Mgmt
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
