@@ -195,6 +195,9 @@ VENDOR_SECURITY_PATCH := 2022-05-01
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
+# SurfaceFlinger
+TARGET_USE_AOSP_SURFACEFLINGER := true
+
 # Touchpanel
 TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
