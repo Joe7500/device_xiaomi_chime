@@ -500,7 +500,7 @@ PRODUCT_BOOT_JARS += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@2.0-service.qti
+    android.hardware.thermal-service.qti
 
 # Touchscreen
 PRODUCT_PACKAGES += \
@@ -531,7 +531,7 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service \
+    android.hardware.wifi-service \
     hostapd \
     libwifi-hal-ctrl \
     libwifi-hal-qcom \
