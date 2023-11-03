@@ -1,0 +1,5 @@
+Thanks @Tiann for the Kernel Driver and the Manager Binary.
+The Manager is provided here under the permissiveness of GPL-3 [https://github.com/tiann/KernelSU/blob/main/LICENSE]
+
+Given the nature of the KernelSU driver module it is ABSOLUTELY IMPERATIVE that there is a manager bundled in that can protect the user from themselves. This is only here as additional security and more importantly as insurance.
+The user can choose to get rid of it, or they can leave it as is.
