@@ -104,7 +104,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     libstdc++.vendor \
     libgui_vendor \
-    GCamGo
+    OpenCamera
 
 # Component overrides
 PRODUCT_COPY_FILES += \
