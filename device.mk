@@ -220,7 +220,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.bengal
 
-# KSU
+# KernelSU
 PRODUCT_PACKAGES += \
     KSUManager
 
@@ -317,7 +317,7 @@ PRODUCT_PACKAGES += \
 
 # Package Mgmt
 PRODUCT_PACKAGES += \
-    RemovePackages
+#   RemovePackages (Disabled until prebuilts are worked out, or maybe even after)
 
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
