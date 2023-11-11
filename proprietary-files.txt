@@ -1188,6 +1188,9 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 
+# Protobuf - from redfin - TQ3A.230901.001/10750268
+vendor/lib64/libprotobuf-cpp-lite-3.9.1.so
+
 # QCC
 vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service
 vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc
