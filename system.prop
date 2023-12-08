@@ -12,6 +12,9 @@ persist.vendor.cne.feature=1
 # DPM
 persist.vendor.dpm.feature=1
 
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 persist.demo.hdmirotationlock=false
 debug.cpurend.vsync=false
