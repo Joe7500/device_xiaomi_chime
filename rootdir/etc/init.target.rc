@@ -480,6 +480,10 @@ on property:vendor.post_boot.parsed=1
     # to hide Magisk & co.
     chmod 440 /proc/net/unix
 
+on early-init
+    # Start audio adsp rpc daemon at early init stage
+    start vendor.audioadsprpcd_audiopd
+
 ########### FTM end ##########
 ########### FTM end ##########
 ########### FTM end ##########
