@@ -218,12 +218,12 @@ PRODUCT_PACKAGES += \
     lights.bengal
 
 # KernelSU
-PRODUCT_PACKAGES += \
-    KSUManager
+#PRODUCT_PACKAGES += \
+#    KSUManager
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/KSUManager/lib/libkernelsu.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libkernelsu.so \
-    $(LOCAL_PATH)/KSUManager/lib/libksud.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libksud.so
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/KSUManager/lib/libkernelsu.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libkernelsu.so \
+#    $(LOCAL_PATH)/KSUManager/lib/libksud.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libksud.so
 
 # Keylayout
 PRODUCT_COPY_FILES += \
