@@ -455,6 +455,9 @@ service panel_color /vendor/bin/panelcolor_bin
 on property:sys.boot_completed=1
     start panel_color
 
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
 on property:vendor.post_boot.parsed=1
 
 # Enable suspend to RAM
