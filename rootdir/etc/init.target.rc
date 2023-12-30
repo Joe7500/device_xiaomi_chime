@@ -434,6 +434,7 @@ on boot
     write /sys/bus/msm_subsys/devices/subsys0/restart_level related
 
     # Touchpanel
+    chmod 0660 /sys/touchpanel/double_tap
     chown system system /sys/touchpanel/double_tap
 
 service dcvs-sh /vendor/bin/init.qti.dcvs.sh
