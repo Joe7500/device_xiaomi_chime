@@ -148,11 +148,6 @@
         <item>4000</item>
         <item>4500</item>
     </integer-array>
-    <integer-array name="config_availableColorModes">
-        <item>0</item>
-        <item>1</item>
-        <item>3</item>
-    </integer-array>
     <integer-array name="config_dynamicHysteresisBrightLevels">
         <item>2000</item>
         <item>2000</item>
