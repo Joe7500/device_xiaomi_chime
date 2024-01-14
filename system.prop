@@ -1,9 +1,6 @@
 # Bluetooth
 vendor.bluetooth.soc=cherokee
 
-# Bootleggers
-ro.bootleggers.maintainer=hani~🤍
-
 # Camera
 log.tag.CHIUSECASE=ERROR
 persist.vendor.camera.expose.aux=1
