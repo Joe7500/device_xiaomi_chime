@@ -107,7 +107,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     libstdc++_vendor \
     libgui_vendor \
-    OpenCamera
+    Aperture
 
 # Component overrides
 PRODUCT_COPY_FILES += \
