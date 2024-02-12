@@ -314,10 +314,6 @@ PRODUCT_PACKAGES += \
     TelephonyResChime \
     WifiResCommon
 
-# Package Mgmt
-PRODUCT_PACKAGES += \
-#   RemovePackages (Disabled until prebuilts are worked out, or maybe even after)
-
 # PocketMode
 PRODUCT_PACKAGES += \
     PocketMode
