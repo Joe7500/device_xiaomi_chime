@@ -8,6 +8,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/bootleg_chime.mk
 
 COMMON_LUNCH_CHOICES := \
-    bootleg_chime-user \
-    bootleg_chime-userdebug \
-    bootleg_chime-eng
+    $(foreach variant, user userdebug eng, bootleg_chime-$(variant))
