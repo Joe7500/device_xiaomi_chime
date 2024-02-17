@@ -167,6 +167,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0.vendor
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    com.fingerprints.extension@1.0.vendor \
+    vendor.goodix.hardware.fingerprintextension@1.0.vendor
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1.vendor \
