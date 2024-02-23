@@ -57,7 +57,7 @@ vendor.audio.feature.hifi_audio.enable=false
 vendor.audio.feature.hwdep_cal.enable=false
 vendor.audio.feature.incall_music.enable=true
 vendor.audio.feature.keep_alive.enable=true
-vendor.audio.feature.kpi_optimize.enable=false
+vendor.audio.feature.kpi_optimize.enable=true
 vendor.audio.feature.maxx_audio.enable=false
 vendor.audio.feature.multi_voice_session.enable=true
 vendor.audio.feature.ras.enable=true
@@ -116,7 +116,6 @@ camera.disable_zsl_mode=1
 vendor.camera.aux.packageexcludelist=us.zoom.videomeetings
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.aperture,net.sourceforge.opencamera
 persist.vendor.camera.logInfoMask=false
-persist.vendor.camera.perflock.enable=0
 
 # Charging
 persist.vendor.quick.charge=1

@@ -14,8 +14,3 @@ allow vendor_init input_device:chr_file { create setattr unlink rw_file_perms };
 
 get_prop(vendor_init, vendor_camera_prop);
 get_prop(vendor_init, persist_debug_prop);
-
-# Allow vendor_init to set thermal prop
-set_prop(vendor_init, vendor_thermal_normal_prop)
-
-set_prop(vendor_init, vendor_power_prop)
