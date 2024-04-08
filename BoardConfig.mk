@@ -109,6 +109,9 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
 
+# IMS
+BOARD_USES_LEGACY_IMS_SEPOLICY := true
+
 # Init
 TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_chime
 TARGET_RECOVERY_DEVICE_MODULES := libinit_chime
