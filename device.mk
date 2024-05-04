@@ -309,10 +309,8 @@ PRODUCT_PACKAGES += \
     libstagefright_omx.vendor
 
 # Overlays
-ifneq ($(WITH_GAPPS),true)
-PRODUCT_PACKAGES += \
-    $(LOCAL_PATH)/overlay-bootleg
-endif
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
