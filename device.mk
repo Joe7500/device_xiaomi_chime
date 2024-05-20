@@ -167,7 +167,8 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     com.fingerprints.extension@1.0.vendor \
-    vendor.goodix.hardware.fingerprintextension@1.0.vendor
+    vendor.goodix.hardware.fingerprintextension@1.0.vendor \
+    libhidlbase_shim
 
 # GPS
 PRODUCT_PACKAGES += \
