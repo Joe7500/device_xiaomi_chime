@@ -5,7 +5,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/bootleg_chime.mk
+    $(LOCAL_DIR)/lineage_chime.mk
 
 COMMON_LUNCH_CHOICES := \
-    $(foreach variant, user userdebug eng, bootleg_chime-$(variant))
+    $(foreach variant, user userdebug eng, lineage_chime-$(variant))
