@@ -18,6 +18,8 @@ dalvik.vm.dex2oat64.enabled=true
 # Display
 persist.demo.hdmirotationlock=false
 debug.cpurend.vsync=false
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
 
 # Fingerprint
 ro.hardware.fp.sideCap=true

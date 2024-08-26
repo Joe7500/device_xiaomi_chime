@@ -183,6 +183,8 @@ vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
 vendor.display.flush_on_layer_set_empty=1
 vendor.gralloc.secure_preview_buffer_format=420_sp
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiaglthreaded
 
 # Keystore
 ro.hardware.keystore_desede=true
