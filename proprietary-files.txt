@@ -1,4 +1,5 @@
 # All unpinned blobs below are extracted from miui_LIMEGlobal_V14.0.5.0.SJQMIXM
+# Camera from LIMETWGlobal_V14.0.2.0.SJQTWXM and CITRUSTWGlobal_V14.0.2.0.SJFTWXM
 
 # ACDB
 vendor/etc/acdbdata/IDP/bengal-scubaidp-snd-card/IDP_Scuba_Bluetooth_cal.acdb
@@ -435,7 +436,6 @@ vendor/lib64/libgf_ca.so
 vendor/lib64/libgf_hal.so
 vendor/lib64/libgoodixhwfingerprint.so
 vendor/lib64/libsl_fp_impl.so
-vendor/lib64/libvendor.goodix.hardware.biometrics.fingerprint@2.1.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/vendor.silead.hardware.fingerprintext@1.0.so
 
