@@ -21,7 +21,8 @@ PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-im
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    hardware/qcom-caf/common/libqti-perfd-client
 
 # Product Shipping API
 PRODUCT_SHIPPING_API_LEVEL := 29
@@ -342,8 +343,17 @@ PRODUCT_BUILD_SUPER_PARTITION := false
 
 # Perf
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.perf@2.2 \
-    vendor.qti.hardware.perf@2.2.vendor
+    libqti-perfd-client
+
+#PRODUCT_PACKAGES += \
+#    vendor.qti.hardware.perf@2.2 \
+#    vendor.qti.hardware.perf@2.2.vendor \
+#    vendor.qti.hardware.servicetracker@1.0.vendor \
+#    vendor.qti.hardware.servicetracker@1.1.vendor
+
+#PRODUCT_COPY_FILES += \
+#    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/perf/,$(TARGET_COPY_OUT_VENDOR)/etc)
+#    $(LOCAL_PATH)/perf/poweropt-service-disable.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/poweropt-service-disable.rc
 
 # Dex
 ifneq ($(TARGET_BUILD_VARIANT),eng)
