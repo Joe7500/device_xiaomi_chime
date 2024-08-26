@@ -6,6 +6,11 @@
 
 DEVICE_PATH := device/xiaomi/chime
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_framework_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
