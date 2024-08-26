@@ -353,6 +353,9 @@ PRODUCT_PACKAGES += \
     libqti-perfd-client \
     android.hardware.power-service.lineage-libperfmgr
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
 #PRODUCT_PACKAGES += \
 #    vendor.qti.hardware.perf@2.2 \
 #    vendor.qti.hardware.perf@2.2.vendor \
@@ -360,13 +363,8 @@ PRODUCT_PACKAGES += \
 #    vendor.qti.hardware.servicetracker@1.1.vendor
 
 #PRODUCT_COPY_FILES += \
-#    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/perf/,$(TARGET_COPY_OUT_VENDOR)/etc)
-#    $(LOCAL_PATH)/perf/poweropt-service-disable.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/poweropt-service-disable.rc
-
-#PRODUCT_COPY_FILES += \
 #    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/perf/,$(TARGET_COPY_OUT_VENDOR)/etc) 
 #    $(LOCAL_PATH)/perf/poweropt-service-disable.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/poweropt-service-disable.rc
-
 
 # Dex
 ifneq ($(TARGET_BUILD_VARIANT),eng)
