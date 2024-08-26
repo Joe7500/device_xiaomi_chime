@@ -133,8 +133,8 @@ ODM_MANIFEST_SKUS += lemon
 ODM_MANIFEST_LEMON_FILES := $(DEVICE_PATH)/manifest_lemon.xml
 
 # Power
-TARGET_USES_INTERACTION_BOOST := true
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
+#TARGET_USES_INTERACTION_BOOST := true
+#TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
@@ -221,7 +221,7 @@ USE_SENSOR_MULTI_HAL := true
 TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Touchpanel
-TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
+#TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
