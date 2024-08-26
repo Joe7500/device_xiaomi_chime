@@ -234,6 +234,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.bengal
 
+# LiveDisplay
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
@@ -318,7 +322,10 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-aosp
+    $(LOCAL_PATH)/overlay-lineage
+
+#DEVICE_PACKAGE_OVERLAYS += \
+#    $(LOCAL_PATH)/overlay-aosp
 
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
