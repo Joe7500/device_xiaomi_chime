@@ -422,10 +422,8 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2 \
-    android.hardware.power@1.2.vendor 
+    android.hardware.power@1.2.vendor \
 #    android.hardware.power-service-qti
-
-#PRODUCT_COPY_FILES += $(LOCAL_PATH)/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
@@ -462,6 +460,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.qcom.factory.rc \
+    init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.qti.ufs.rc \
