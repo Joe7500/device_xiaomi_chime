@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!--
-Copyright (c) 2015-2017, 2019-2020 The Linux Foundation. All rights reserved.
+Copyright (c) 2015-2017, 2019-2021 The Linux Foundation. All rights reserved.
 
 Not a Contribution.
 
@@ -100,7 +100,7 @@ limitations under the License.
             <Limit name="measured-frame-rate-3840x2160" range="65-75" />
         </MediaCodec>
         <MediaCodec name="OMX.qti.video.decoder.h263sw" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="356-356" />
+            <Limit name="measured-frame-rate-176x144" range="830-1280" />
             <Limit name="measured-frame-rate-352x288" range="292-292" />
         </MediaCodec>
         <MediaCodec name="OMX.qti.video.decoder.mpeg4sw" type="video/mp4v-es" update="true">
@@ -151,14 +151,14 @@ limitations under the License.
             <Limit name="measured-frame-rate-1920x1080" range="20-29" />
         </MediaCodec>
         <MediaCodec name="c2.android.h263.decoder" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="376-524" />
+            <Limit name="measured-frame-rate-176x144" range="1374-1403" />
             <Limit name="measured-frame-rate-352x288" range="310-415" />
         </MediaCodec>
         <MediaCodec name="c2.android.mpeg4.decoder" type="video/mp4v-es" update="true">
             <Limit name="measured-frame-rate-176x144" range="406-543" />
         </MediaCodec>
         <MediaCodec name="c2.android.vp8.decoder" type="video/x-vnd.on2.vp8" update="true">
-            <Limit name="measured-frame-rate-320x180" range="160-480" />
+            <Limit name="measured-frame-rate-320x180" range="950-965" />
             <Limit name="measured-frame-rate-640x360" range="133-184" />
             <Limit name="measured-frame-rate-1920x1080" range="15-22" />
         </MediaCodec>
