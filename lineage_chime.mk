@@ -32,3 +32,5 @@ TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Maintainer
 #DEVICE_MAINTAINERS := Joe
+
+WITH_GMS=false

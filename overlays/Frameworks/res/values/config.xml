@@ -24,7 +24,7 @@
 
     <!-- If true, the screen can be rotated via the accelerometer in all 4
          rotations as the default behavior. -->
-     <bool name="config_allowAllRotations">false</bool>
+     <bool name="config_allowAllRotations">true</bool>
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
@@ -117,13 +117,6 @@
          The default is false. -->
      <bool name="config_lidControlsSleep">true</bool>
 
-     <string-array name="config_deviceDisabledComponents" translatable="false">
-         <item>com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService</item>
-         <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
-         <item>com.google.android.gms/.chimera.GmsIntentOperationService$PersistentTrustedReceiver</item>
-         <item>com.google.android.gms/.stats.service.DropBoxEntryAddedReceiver</item>
-     </string-array>
-
     <!-- Should the pinner service pin the Camera application? -->
      <bool name="config_pinnerCameraApp">false</bool>
 
@@ -146,36 +139,21 @@
     -->
      <bool name="config_powerDecoupleAutoSuspendModeFromDisplay">true</bool>
 
-    <!-- Power Management: Specifies whether to decouple the interactive state of the
-         device from the display on/off state.
-         When false, setInteractive(..., true) will be called before the display is turned on
-         and setInteractive(..., false) will be called after the display is turned off.
-         This mode provides best compatibility for devices that expect the interactive
-         state to be tied to the display state.
-         When true, setInteractive(...) will be called independently of whether the display
-         is being turned on or off.  This mode enables the power manager to reduce
-         clocks and disable the touch controller while the display is on.
-         This resource should be set to "true" when a doze component has been specified
-         to maximize power savings but not all devices support it.
-         Refer to power.h for details.
-    -->
-     <bool name="config_powerDecoupleInteractiveModeFromDisplay">false</bool>
-
     <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently in hardware. -->
      <bool name="config_setColorTransformAccelerated">true</bool>
+
+    <!-- Color mode to use when accessibility transforms are enabled. This color mode must be
+     supported by the device, but not necessarily appear in config_availableColorModes. The
+     regularly selected color mode will be used if this value is negative. -->
+    <integer name="config_accessibilityColorMode">2</integer>
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
      <bool name="config_showNavigationBar">true</bool>
 
-    <!-- Flag indicating if the speed up audio on mt call code should be executed -->
-     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
 
     <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
      <bool name="config_supportAudioSourceUnprocessed">true</bool>
-
-    <!-- Boolean indicating if current platform supports HFP inband ringing -->
-     <bool name="config_supportSystemNavigationKeys">true</bool>
 
     <!-- Indicate whether to allow the device to suspend when the screen is off
          due to the proximity sensor.  This resource should only be set to true
@@ -190,18 +168,10 @@
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
-    <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
-     <bool name="config_swipe_up_gesture_setting_available">true</bool>
-
     <!-- Config determines whether to update phone object when voice registration
          state changes. Voice radio tech change will always trigger an update of
          phone object irrespective of this config -->
      <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
-
-    <!-- When true, the tethering upstream network follows the current default
-         Internet network (except when the current default network is mobile,
-         in which case a DUN network will be used if required). -->
-     <bool name="config_tether_upstream_automatic">true</bool>
 
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
      <bool name="config_unplugTurnsOnScreen">true</bool>
@@ -213,20 +183,8 @@
     <!-- Enable video pause workaround when enabling/disabling the camera. -->
      <bool name="config_useVideoPauseWorkaround">true</bool>
 
-    <!-- Boolean indicating whether the wifi chipset has background scan support -->
-     <bool name="config_wifi_background_scan_support">true</bool>
-
-    <!-- Wifi driver supports batched scan -->
-     <bool name="config_wifi_batched_scan_supported">true</bool>
-
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
      <bool name="config_wifi_dual_band_support">true</bool>
-
-    <!-- Boolean indicating whether single radio chain scan results are to be used for network selection -->
-     <bool name="config_wifi_framework_use_single_radio_chain_scan_results_network_selection">true</bool>
-
-    <!-- Enable ACS (auto channel selection) for Wifi hotspot (SAP) -->
-     <bool name="config_wifi_softap_acs_supported">true</bool>
 
     <!-- Enable 802.11ac for Wifi hotspot (SAP) -->
      <bool name="config_wifi_softap_ieee80211ac_supported">true</bool>
@@ -261,13 +219,8 @@
          brightness changes occur in response to an observed change in light level that exceeds the
          hysteresis threshold. -->
 
-    <integer name="config_autoBrightnessBrighteningLightDebounce">1000</integer>
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
     <integer name="config_autoBrightnessDarkeningLightDebounce">2000</integer>
-
-     <!-- Amount of time it takes for the light sensor to warm up in milliseconds.
-     For this time after the screen turns on, the Power Manager
-     will not debounce light sensor readings -->
-    <integer name="config_lightSensorWarmupTime">200</integer>
 
     <!-- Fast brightness animation ramp rate in brightness units per second-->
     <integer name="config_brightness_ramp_rate_fast">4933</integer>
@@ -817,15 +770,6 @@
     <!--  Maximum number of supported users -->
      <integer name="config_multiuserMaximumUsers">4</integer>
 
-    <!-- Default value for led color when battery is fully charged -->
-     <integer name="config_notificationsBatteryFullARGB">0xFF00FF00</integer>
-
-    <!-- Default value for led color when battery is low on charge -->
-     <integer name="config_notificationsBatteryLowARGB">0xFFFF0000</integer>
-
-    <!-- Default value for led color when battery is medium charged -->
-     <integer name="config_notificationsBatteryMediumARGB">0xFFFFFF00</integer>
-
     <!-- Number of physical SIM slots on the device. This includes both eSIM and pSIM slots, and
          is not necessarily the same as the number of phones/logical modems supported by the device.
          For example, a multi-sim device can have 2 phones/logical modems, but 3 physical slots,
@@ -851,32 +795,9 @@
          The user is forbidden from setting the brightness below this level. -->
      <integer name="config_screenBrightnessSettingMinimum">10</integer>
 
-    <!-- Flag indicating whether the surface flinger has limited
-         alpha compositing functionality in hardware.  If set, the window
-         manager will disable alpha trasformation in animations where not
-         strictly needed. -->
-    <bool name="config_sf_limitedAlpha">true</bool>
-
-    <!-- Enables or disables fading edges when marquee is enabled in TextView.
-         Off by default, since the framebuffer readback used to implement the
-         fading edges is prohibitively expensive on most GPUs. -->
-    <bool name="config_ui_enableFadingMarquee">true</bool>
-
-    <!-- Whether device ignores the RSSNR signal implementation -->
-    <bool name="config_ignoreRssnrSignalLevel">true</bool>
-
     <!-- Shutdown if the battery temperature exceeds (this value * 0.1) Celsius. -->
      <integer name="config_shutdownBatteryTemperature">600</integer>
     
-    <!-- The default journal mode to use use when Write-Ahead Logging is not active.
-         Choices are: OFF, DELETE, TRUNCATE, PERSIST and MEMORY.
-         PERSIST may improve performance by reducing how often journal blocks are
-         reallocated (compared to truncation) resulting in better data block locality
-         and less churn of the storage media.
-         The PERSIST mode results in data persisting in the journal beyond the life of
-         a transaction, so it interacts poorly with SECURE_DELETE. -->
-    <string name="db_default_journal_mode">MEMORY</string>
-
     <!-- The database synchronization mode when using the default journal mode.
          FULL is safest and preserves durability at the cost of extra fsyncs.
          NORMAL also preserves durability in non-WAL modes and uses checksums to ensure
@@ -895,13 +816,6 @@
          running in WAL mode.
          Choices are: FULL, NORMAL, OFF. -->
     <string name="db_wal_sync_mode">OFF</string>
-
-    <!-- Integer parameters of the wifi to cellular handover feature
-         wifi should not stick to bad networks -->
-     <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_24GHz">-83</integer>
-     <integer name="config_wifi_framework_wifi_score_bad_rssi_threshold_5GHz">-80</integer>
-     <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_24GHz">-73</integer>
-     <integer name="config_wifi_framework_wifi_score_low_rssi_threshold_5GHz">-70</integer>
 
     <!-- ComponentName of a dream to show whenever the system would otherwise have
          gone to sleep.  When the PowerManager is asked to go to sleep, it will instead
@@ -924,54 +838,11 @@
     <string-array translatable="false" name="config_defaultPinnerServiceFiles">
         <item>"/system/framework/framework.jar"</item>
         <item>"/system/framework/services.jar"</item>
-        <item>"/system/framework/ext.jar"</item>
-        <item>"/system/lib/libEGL.so"</item>
-        <item>"/system/lib/libGLESv1_CM.so"</item>
-        <item>"/system/lib/libGLESv2.so"</item>
-        <item>"/system/lib/libGLESv3.so"</item>
-        <item>"/system/lib/libgui.so"</item>
-        <item>"/system/lib/libhwui.so"</item>
-        <item>"/system/lib/libui.so"</item>
-        <item>"/system/lib/libvulkan.so"</item>
-        <item>"/system/lib64/libEGL.so"</item>
-        <item>"/system/lib64/libGLESv1_CM.so"</item>
-        <item>"/system/lib64/libGLESv2.so"</item>
-        <item>"/system/lib64/libGLESv3.so"</item>
-        <item>"/system/lib64/libgui.so"</item>
-        <item>"/system/lib64/libhwui.so"</item>
-        <item>"/system/lib64/libui.so"</item>
-        <item>"/system/lib64/libvulkan.so"</item>
-        <item>"/vendor/lib/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib/egl/eglSubDriverAndroid.so"</item>
-        <item>"/vendor/lib/egl/libEGL_adreno.so"</item>
-        <item>"/vendor/lib/egl/libGLESv1_CM_adreno.so"</item>
-        <item>"/vendor/lib/egl/libGLESv2_adreno.so"</item>
-        <item>"/vendor/lib/hw/vulkan.adreno.so"</item>
-        <item>"/vendor/lib/libCB.so"</item>
-        <item>"/vendor/lib/libOpenCL.so"</item>
-        <item>"/vendor/lib/libadreno_app_profiles.so"</item>
-        <item>"/vendor/lib/libadreno_utils.so"</item>
-        <item>"/vendor/lib/libgsl.so"</item>
-        <item>"/vendor/lib/libllvm-glnext.so"</item>
-        <item>"/vendor/lib/libllvm-qcom.so"</item>
-        <item>"/vendor/lib64/libcamxexternalformatutils.so"</item>
-        <item>"/vendor/lib64/libipebpsstriping.so"</item>
-        <item>"/vendor/lib64/egl/eglSubDriverAndroid.so"</item>
-        <item>"/vendor/lib64/egl/libEGL_adreno.so"</item>
-        <item>"/vendor/lib64/egl/libGLESv1_CM_adreno.so"</item>
-        <item>"/vendor/lib64/egl/libGLESv2_adreno.so"</item>
-        <item>"/vendor/lib64/hw/vulkan.adreno.so"</item>
-        <item>"/vendor/lib64/libCB.so"</item>
-        <item>"/vendor/lib64/libOpenCL.so"</item>
-        <item>"/vendor/lib64/libadreno_app_profiles.so"</item>
-        <item>"/vendor/lib64/libadreno_utils.so"</item>
-        <item>"/vendor/lib64/libgpudataproducer.so"</item>
-        <item>"/vendor/lib64/libgsl.so"</item>
+        <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
+        <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
         <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/system_ext/priv-app/SystemUI/oat/arm64/SystemUI.odex"</item>
         <item>"/system/bin/surfaceflinger"</item>
-        <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
-        <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
     </string-array>
 
     <!-- Whether device has a notch -->
@@ -991,32 +862,9 @@
     <!-- Whether device has fingerprint on power button -->
     <bool name="config_powerButtonFingerprint">true</bool>
 
-    <string name="config_mms_user_agent">Android-Mms/2.0</string>
-    <string name="config_mms_user_agent_profile_url">http://www.google.com/oha/rdf/ua-profile-kila.xml</string>
-    <!-- Flag indicating which package name can access the persistent data partition -->
-    <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
-
-    <string-array name="config_locationProviderPackageNames" translatable="false">
-       <!-- The Google provider -->
-       <item>com.google.android.gms</item>
-       <!-- The standard AOSP fused location provider -->
-       <item>com.android.location.fused</item>
-    </string-array>
-
-    <!-- Adaptive Charging sysfs node & value for suspend/resume charging-->
-    <string name="config_adaptiveChargingSysfsNode" translatable="false">/sys/class/power_supply/battery/input_suspend</string>
-    <string name="config_adaptiveChargingSupspendValue" translatable="false">1</string>
-    <string name="config_adaptiveChargingResumeValue" translatable="false">0</string>
-
     <string name="config_qualified_networks_service_package">vendor.qti.iwlan</string>
     <string name="config_wlan_data_service_package">vendor.qti.iwlan</string>
     <string name="config_wlan_network_service_package">vendor.qti.iwlan</string>
-
-    <!-- Flashlight on power button -->
-    <integer name="config_flashlightProximityTimeout">3000</integer>
-
-    <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
-    <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
@@ -1063,84 +911,19 @@
          meanings. -->
     <integer name="config_defaultRingVibrationIntensity">5</integer>
  
-    
-    <!-- List of comma separated package names for 
-    which we the system will not show crash, ANR,
-         etc. dialogs. --> 
-    <string name="config_appsNotReportingCrashes">com.google.android.tts</string>
-
-    <!-- Screen off delay -->
-    <integer name="config_screen_off_delay">0</integer>
-
-    <!-- Exempt cne from privacy (location) indicators -->
-    <string name="config_systemTelephonyPackage" translatable="false">com.qualcomm.qti.cne</string>
+    <!-- The duration (in milliseconds) that should be 
+         applied to waveform vibrations that ends in non-zero amplitudes, to bring the vibrator amplitude down to zero using this timing. -->
+    <integer name="config_vibrationWaveformRampDownDuration">25</integer>
 
     <!-- Whether the display cutout region of the main built-in display should be forced to
          black in software (to avoid aliasing or emulate a cutout that is not physically existent). -->
     <string name="config_mainBuiltInDisplayCutout">M -78,0 L -78,78 L 78,78 L 78,0 Z</string>
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <bool name="config_intrusiveBatteryLed">false</bool>
-
-    <!-- Indicates whether device has a power button fingerprint sensor. -->
-    <bool name="config_is_powerbutton_fps">true</bool>
-
-    <!-- An array of arrays of side fingerprint sensor properties relative to each display.
-         Note: this value is temporary and is expected to be queried directly
-         from the HAL in the future. -->
-    <array name="config_sfps_sensor_props" translatable="false">
-        <item>@array/config_sfps_sensor_props_0</item>
-    </array>
-
-    <array name="config_sfps_sensor_props_0" translatable="false">
-        <item></item> <!--item>displayId</item-->
-        <item></item> <!--item>sensorLocationX</item-->
-        <item>910</item>
-        <item>150</item>
-    </array>
+    <!-- Whether this device supports Qualcomm BoostFramework -->
+    <bool name="config_supportsBoostFramework">true</bool>
 
     <!-- Determines whether the shell features all run on another thread. -->
     <bool name="config_enableShellMainThread">true</bool>
-
-    <!-- Delay that allows some content to arrive at the display before switching
-         from DOZE to ON, in millis. -->
-    <integer name="config_wakeUpDelayDoze">32</integer>
-
-    <!-- List supported color modes. -->
-    <integer-array name="config_availableColorModes">
-        <item>0</item> <!-- COLOR_MODE_NATURAL -->
-        <item>1</item> <!-- COLOR_MODE_BOOSTED -->
-        <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
-    </integer-array>
-
-    <!-- Color mode to use when accessibility transforms are enabled. This color mode must be
-         supported by the device, but not necessarily appear in config_availableColorModes. The
-         regularly selected color mode will be used if this value is negative. -->
-    <integer name="config_accessibilityColorMode">2</integer>
-
-    <!-- The following two arrays specify which color space to use for display composition when a
-         certain color mode is active.
-         Composition color spaces are defined in android.view.Display.COLOR_MODE_xxx, and color
-         modes are defined in ColorDisplayManager.COLOR_MODE_xxx and
-         ColorDisplayManager.VENDOR_COLOR_MODE_xxx.
-         The color space COLOR_MODE_DEFAULT (0) lets the system select the most appropriate
-         composition color space for currently displayed content. Other values (e.g.,
-         COLOR_MODE_SRGB) override system selection; these other color spaces must be supported by
-         the device for for display composition.
-         If a color mode does not have a corresponding color space specified in this array, the
-         currently set composition color space will not be modified.-->
-    <integer-array name="config_displayCompositionColorModes">
-        <item>0</item> <!-- COLOR_MODE_NATURAL   -->
-        <item>1</item> <!-- COLOR_MODE_BOOSTED   -->
-        <item>2</item> <!-- COLOR_MODE_SATURATED -->
-        <item>3</item> <!-- COLOR_MODE_AUTOMATIC -->
-    </integer-array>
-    <integer-array name="config_displayCompositionColorSpaces">
-        <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
-        <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
-        <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
-        <item>0</item> <!-- COLOR_MODE_DISPLAY_P3 -->
-    </integer-array>
 
     <!-- Whether the new Auto Selection Network UI should be shown -->
     <bool name="config_enableNewAutoSelectNetworkUI">true</bool>

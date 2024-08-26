@@ -27,3 +27,4 @@ type thermal_data_file, file_type, data_file_type;
 
 # Touchpanel
 type sysfs_touchpanel, fs_type, sysfs_type;
+
