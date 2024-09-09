@@ -16,8 +16,16 @@ service nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service.st
     disabled
 
 on post-fs && property:ro.boot.product.hardware.sku=lemon
+    wait /dev/st21nfc 5
+    exec -- /bin/sleep 5
+    chmod 0666 /dev/st21nfc
+    chown nfc nfc /dev/st21nfc
     start stflashtool
     setprop ro.vendor.se.type HCE,UICC
 
 on boot && property:ro.boot.product.hardware.sku=lemon
+    wait /dev/st21nfc 5
+    exec -- /bin/sleep 5
+    chmod 0666 /dev/st21nfc
+    chown nfc nfc /dev/st21nfc
     start nfc_hal_service
