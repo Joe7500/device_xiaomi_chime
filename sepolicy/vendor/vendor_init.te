@@ -17,3 +17,5 @@ get_prop(vendor_init, persist_debug_prop);
 
 allow vendor_init device:file create;
 allow vendor_init device:file write;
+
+allow vendor_init nfc_device:chr_file { setattr getattr };
