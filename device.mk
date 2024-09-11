@@ -590,6 +590,26 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
+#  WFD
+PRODUCT_PACKAGES += \
+    libdisplayconfig.qti \
+    libdisplayconfig.system.qti \
+    android.media.audio.common.types-V2-cpp \
+    vendor.qti.hardware.display.config-V5-ndk \
+    libwfds \
+    libwfdaac_vendor \
+    libavservices_minijail \
+    libnl
+
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    debug.sf.enable_hwc_vds=0 \
+    persist.debug.wfd.enable=1 \
+    persist.sys.wfd.virtual=0
+
+
 #TARGET_BOARD_PLATFORM := bengal
 #TARGET_COMMON_QTI_COMPONENTS := perf
 #TARGET_EXCLUDE_QCOM_SEPOLICY := true
