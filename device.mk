@@ -491,7 +491,8 @@ PRODUCT_COPY_FILES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libpiex_shim
+    libpiex_shim \
+    libcrypto-v33
 
 # Speed profile services and wifi-service
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
