@@ -14,10 +14,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/xiaomi/chime/chime-vendor.mk)
 
-# Inherit several Android Go Configurations(Beneficial for everyone, even on non-Go devices)
-PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
-PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
@@ -303,7 +299,8 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
 
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/nfc/android.hardware.nfc@1.2-service.st.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.nfc@1.2-service.st.rc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/nfc/android.hardware.nfc@1.2-service.st.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.nfc@1.2-service.st.rc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.ese.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_lemon/android.hardware.nfc.ese.xml \
@@ -331,9 +328,6 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
-#DEVICE_PACKAGE_OVERLAYS += \
-#    $(LOCAL_PATH)/overlay-aosp
-
 PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     FrameworksCustomChime \
@@ -354,16 +348,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
-#PRODUCT_PACKAGES += \
-#    vendor.qti.hardware.perf@2.2 \
-#    vendor.qti.hardware.perf@2.2.vendor \
-#    vendor.qti.hardware.servicetracker@1.0.vendor \
-#    vendor.qti.hardware.servicetracker@1.1.vendor
-
-#PRODUCT_COPY_FILES += \
-#    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/perf/,$(TARGET_COPY_OUT_VENDOR)/etc) 
-#    $(LOCAL_PATH)/perf/poweropt-service-disable.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/poweropt-service-disable.rc
 
 # Dex
 ifneq ($(TARGET_BUILD_VARIANT),eng)
@@ -421,8 +405,7 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2 \
-    android.hardware.power@1.2.vendor \
-#    android.hardware.power-service-qti
+    android.hardware.power@1.2.vendor 
 
 # Public Libraries
 PRODUCT_COPY_FILES += \
@@ -468,7 +451,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     fstab.qcom \
     ueventd.qcom.rc 
-#    logcat.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom \
@@ -609,12 +591,11 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.debug.wfd.enable=1 \
     persist.sys.wfd.virtual=0
 
-
+# AOSP QCOM common
 #TARGET_BOARD_PLATFORM := bengal
-#TARGET_COMMON_QTI_COMPONENTS := perf
+#TARGET_COMMON_QTI_COMPONENTS := wfd
 #TARGET_EXCLUDE_QCOM_SEPOLICY := true
 #include device/qcom/common/Android.mk
 #include device/qcom/common/common.mk
 #include device/qcom/common/components.mk
 #include device/qcom/common/BoardConfigQcom.mk
-
