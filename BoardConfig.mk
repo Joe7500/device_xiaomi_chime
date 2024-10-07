@@ -6,7 +6,7 @@
 
 DEVICE_PATH := device/xiaomi/chime
 
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/framework_compatibility_matrix.xml
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/lineage/config/device_framework_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml
@@ -99,7 +99,7 @@ TARGET_USES_GRALLOC4 := true
 TARGET_USES_HWC2 := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -108,8 +108,8 @@ BOARD_HAVE_QCOM_FM := true
 TARGET_HALS_PATH ?= hardware/qcom-caf/$(TARGET_BOARD_PLATFORM)
 
 # HIDL
-DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
@@ -130,7 +130,7 @@ BOARD_USES_METADATA_PARTITION := true
 
 # NFC
 ODM_MANIFEST_SKUS += lemon
-ODM_MANIFEST_LEMON_FILES := $(DEVICE_PATH)/manifest_lemon.xml
+ODM_MANIFEST_LEMON_FILES := $(DEVICE_PATH)/configs/vintf/manifest_lemon.xml
 
 # Power
 #TARGET_USES_INTERACTION_BOOST := true
@@ -171,11 +171,11 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_PRODUCT := product
 
 # Properties
-TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
-TARGET_PRODUCT_PROP += $(DEVICE_PATH)/product.prop
-TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/system_ext.prop
+TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
+TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
+TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/props/system_ext.prop
 
 # Dex
 ifneq ($(TARGET_BUILD_VARIANT),eng)
