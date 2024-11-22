@@ -350,7 +350,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
 # Dex
-ifneq ($(TARGET_BUILD_VARIANT),eng)
+ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 ART_BUILD_TARGET_NDEBUG := true
@@ -498,8 +498,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Boot image profiling
+ifeq ($(TARGET_BUILD_VARIANT),user)
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
 PRODUCT_DEX_PREOPT_BOOT_IMAGE_PROFILE_LOCATION := frameworks/base/config/boot-image-profile.txt
+endif
 
 # Telephony
 PRODUCT_PACKAGES += \
