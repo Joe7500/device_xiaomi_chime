@@ -185,6 +185,10 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/props/system_ext.prop
 
+# OTA package
+TARGET_OTA_ALLOW_NON_AB := true
+AB_OTA_UPDATER := false
+
 # Dex
 ifeq ($(TARGET_BUILD_VARIANT),user)
 WITH_DEXPREOPT := true
