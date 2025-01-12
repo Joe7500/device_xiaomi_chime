@@ -143,7 +143,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@4.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.0.vendor \
     vendor.qti.hardware.display.mapperextensions@1.1.vendor\
-    gralloc.bengal \
+    gralloc.default \
     libqdMetaData \
     libqdMetaData.system \
     libsdmcore \
@@ -228,9 +228,6 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.chime
-
-PRODUCT_PACKAGES += \
-    lights.bengal
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
