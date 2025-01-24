@@ -64,6 +64,9 @@ function blob_fixup() {
         vendor/lib64/camera/components/com.qti.node.mialgocontrol.so)
             "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
             ;;
+	vendor/etc/seccomp_policy/atfwd@2.0.policy)
+	    echo 'gettid: 1' >> ${2}
+	    ;;
     esac
 }
 
