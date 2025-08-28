@@ -220,8 +220,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # SELinux
-include device/qcom/sepolicy_vndr/SEPolicy.mk
-include device/lineage/sepolicy/libperfmgr/sepolicy.mk
+include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
@@ -233,7 +232,7 @@ VENDOR_SECURITY_PATCH := 2023-02-01
 USE_SENSOR_MULTI_HAL := true
 
 # SurfaceFlinger
-TARGET_USE_AOSP_SURFACEFLINGER := true
+#TARGET_USE_AOSP_SURFACEFLINGER := true
 
 # Touchpanel
 #TARGET_TAP_TO_WAKE_NODE := "/sys/touchpanel/double_tap"
