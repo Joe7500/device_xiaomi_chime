@@ -19,7 +19,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/google/interfaces \
     hardware/google/pixel \
-//    hardware/qcom-caf/common/libqti-perfd-client \
+    device/xiaomi/chime/libqti-perfd-client \
     hardware/xiaomi
 
 # Product Shipping API
